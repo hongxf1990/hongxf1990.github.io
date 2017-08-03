@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-03T06:05:31.293Z</updated>
+  <updated>2017-08-03T06:09:22.343Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>快速建立可以在Tomcat中运行的Spring Boot项目.md</title>
+    <title>快速建立可以在Tomcat中运行的Spring Boot项目</title>
     <link href="http://yoursite.com/2017/08/02/%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E5%8F%AF%E4%BB%A5%E5%9C%A8Tomcat%E4%B8%AD%E8%BF%90%E8%A1%8C%E7%9A%84Spring-Boot%E9%A1%B9%E7%9B%AE/"/>
     <id>http://yoursite.com/2017/08/02/快速建立可以在Tomcat中运行的Spring-Boot项目/</id>
     <published>2017-08-02T08:53:04.000Z</published>
-    <updated>2017-08-03T06:05:31.293Z</updated>
+    <updated>2017-08-03T06:09:22.343Z</updated>
     
     <content type="html"><![CDATA[<p>该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。<br><a id="more"></a></p>
 <h4 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h4><p><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145058449.png" alt="mark"><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145140518.png" alt="mark"><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145150878.png" alt="mark"></p>

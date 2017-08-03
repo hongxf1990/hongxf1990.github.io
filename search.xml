@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[快速建立可以在Tomcat中运行的Spring Boot项目.md]]></title>
+    <url>%2F2017%2F08%2F02%2F%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E5%8F%AF%E4%BB%A5%E5%9C%A8Tomcat%E4%B8%AD%E8%BF%90%E8%A1%8C%E7%9A%84Spring-Boot%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[新建一个项目该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。 只选择一个web依赖导入 编写简单示例代码项目结构如图： 代码如下：123456789@RestController@RequestMapping(value = "/demo")public class HelloController &#123; @RequestMapping(value = "/hello") public String hello() &#123; return "hello world"; &#125;&#125; 启动程序，向前台简单输出hello world，测试访问http://localhost:8080/demo/hello运行正常。 修改主启动程序123456789101112@SpringBootApplicationpublic class DemoApplication extends SpringBootServletInitializer &#123; public static void main(String[] args) &#123; SpringApplication.run(DemoApplication.class, args); &#125; @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder application) &#123; return application.sources(DemoApplication.class); &#125;&#125; 继承SpringBootServletInitializer重写configure 配置成普通web项目 选择web项目，结果如图：可以删除web.xml的配置和web配置，结果如图：配置Artifacts，如图所示选择：选中demo的module，结果如图：这里更改输出目录，选择target目录 配置Tomcat启动程序选择之前配置的Artifacts测试访问http://localhost:8080/demo/hello运行正常。 打成war配置修改pom.xml文件 修改&lt;packaging&gt;jar&lt;/packaging&gt;为&lt;packaging&gt;war&lt;/packaging&gt; 添加依赖12345&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt; &lt;scope&gt;provided&lt;/scope&gt;&lt;/dependency&gt; 这里不再使用自带的Tomcat容器 打包 放入Tomcat中进行测试 打成的war包名称是demo-0.0.1-SNAPSHOT.war，修改成demo.war 放入Tomcat的webapps文件夹中，使用命令catalina.bat run运行 访问路径http://localhost:8080/demo/demo/hello 测试成功，第一个demo是项目名称]]></content>
+      <tags>
+        <tag>Spring Boot</tag>
+        <tag>Tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2017%2F07%2F20%2Ftest%2F</url>
+    <content type="text"><![CDATA[含义我们在服务注册中心看到那么多服务，我们需要使用这些服务，并且在使用过程中达到负载均衡功能。 Spring Cloud Ribbon是基于Netflix Ribbon实现的一套客户端负载均衡的工具。它是一个基于HTTP和TCP的客户端负载均衡器。它可以通过在客户端中配置ribbonServerList来设置服务端列表去轮询访问以达到均衡负载的作用。 当Ribbon与Eureka联合使用时，ribbonServerList会被DiscoveryEnabledNIWSServerList重写，扩展成从Eureka注册中心中获取服务实例列表。同时它也会用NIWSDiscoveryPing来取代IPing，它将职责委托给Eureka来确定服务端是否已经启动。 基本实现步骤添加依赖123456789&lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-ribbon&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- 注册为服务 --&gt;&lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;&lt;/dependency&gt; 关键是添加spring-cloud-starter-ribbon 主程序上添加 @EnableDiscoveryClient注册为服务主程序中开启负载均衡能力1234567891011121314@EnableDiscoveryClient //添加发现服务能力@SpringBootApplicationpublic class RibbonApplication &#123; public static void main(String[] args) &#123; SpringApplication.run(RibbonApplication.class, args); &#125; @Bean @LoadBalanced RestTemplate restTemplate() &#123; return new RestTemplate(); &#125;&#125; 这里使用看注解 @LoadBalanced 配置注册信息12345server.port=3333spring.application.name=ribbon-consumereureka.client.service-url.defaultZone=http://localhost:1001/eureka 同样注册为服务 编写服务方法一个Service类12345678910@Servicepublic class ComputeService &#123; @Resource private RestTemplate restTemplate; public String addService() &#123; return restTemplate.getForEntity("http://compute-service/add?a=10&amp;b=20", String.class).getBody(); &#125;&#125; 一个Controller类12345678910@RestControllerpublic class ConsumerController &#123; @Resource private ComputeService computeService; @RequestMapping(value = "/add", method = RequestMethod.GET) public String add() &#123; return computeService.addService(); &#125;&#125; 测试时候可以启动多个相同微服务名称的实例，多次访问http://localhost:3333/add 可以查看输出日志，ribbon已经实现了负载均衡功能。]]></content>
+      <tags>
+        <tag>test</tag>
+        <tag>test2</tag>
+      </tags>
+  </entry>
+</search>

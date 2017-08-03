@@ -93,13 +93,13 @@
 
 
 
-<meta name="description" content="新建一个项目该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。">
+<meta name="description" content="该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。">
 <meta name="keywords" content="Spring Boot,Tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速建立可以在Tomcat中运行的Spring Boot项目.md">
 <meta property="og:url" content="http://yoursite.com/2017/08/02/快速建立可以在Tomcat中运行的Spring-Boot项目/index.html">
 <meta property="og:site_name" content="飞天0407的博客">
-<meta property="og:description" content="新建一个项目该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。">
+<meta property="og:description" content="该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ojplxteam.bkt.clouddn.com/blog/20170802/145058449.png">
 <meta property="og:image" content="http://ojplxteam.bkt.clouddn.com/blog/20170802/145140518.png">
@@ -115,10 +115,10 @@
 <meta property="og:image" content="http://ojplxteam.bkt.clouddn.com/blog/20170802/151008744.png">
 <meta property="og:image" content="http://ojplxteam.bkt.clouddn.com/blog/20170802/151045224.png">
 <meta property="og:image" content="http://ojplxteam.bkt.clouddn.com/blog/20170802/153948651.png">
-<meta property="og:updated_time" content="2017-08-03T05:59:39.486Z">
+<meta property="og:updated_time" content="2017-08-03T06:05:31.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速建立可以在Tomcat中运行的Spring Boot项目.md">
-<meta name="twitter:description" content="新建一个项目该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。">
+<meta name="twitter:description" content="该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。">
 <meta name="twitter:image" content="http://ojplxteam.bkt.clouddn.com/blog/20170802/145058449.png">
 
 
@@ -401,7 +401,8 @@
       
 
       
-        <h4 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h4><p>该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。<br><a id="more"></a><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145058449.png" alt="mark"><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145140518.png" alt="mark"><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145150878.png" alt="mark"></p>
+        <p>该示例是演示如何使用IDEA创建一个Spring Boot项目，直接利用Tomcat运行，且打成war包在Tomcat中启动。<br><a id="more"></a></p>
+<h4 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h4><p><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145058449.png" alt="mark"><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145140518.png" alt="mark"><br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145150878.png" alt="mark"></p>
 <p>只选择一个web依赖导入</p>
 <h4 id="编写简单示例代码"><a href="#编写简单示例代码" class="headerlink" title="编写简单示例代码"></a>编写简单示例代码</h4><p>项目结构如图：<br><img src="http://ojplxteam.bkt.clouddn.com/blog/20170802/145407101.png" alt="mark"></p>
 <p>代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/demo"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"hello world"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
